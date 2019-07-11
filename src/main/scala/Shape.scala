@@ -1,16 +1,11 @@
 class Shape {
-  def area(shape: String,first:Int,second:Int,f:(Int,Int)): Int ={
-    shape match{
-      case "Rectangle" => def f(length:Int, breadth:Int): Int ={
-        length * breadth
+  def area(shape: String,first:Int,second:Int): String ={
+    def high(first:Int,second:Int,f:(Int,Int)=>Int):Int= {f(first,second)}
+      shape match {
+        case "Rectangle" => (s"rectangle is ${high(first,second,(first,second)=>first*second)}")
+        case "Rhombus" => (s"rhombus is${high(first,second,(first,second)=>first*second/2)}")
+        case "Parallelogram" => (s"parallelogram is${high(first,second,(first,second)=>first*second)}")
+        case _ => s"not defined yet for $shape"
       }
-      case "Rhombus" => def f(diago:Int, diagonal:Int): Int ={
-        (diago * diagonal) / 2
-      }
-      case "Parallelogram" =>def f(base:Int, height:Int): Int ={
-        base * height
-      }
-      case _ => println(s"not defined yet for $shape")
     }
   }
-}
